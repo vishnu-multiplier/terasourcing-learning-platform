@@ -1,10 +1,9 @@
 import mongoose from "mongoose";
 
-const URL = "mongodb+srv://vishnu:lJ8NLkeyglYd4KYL@terasourcing.rzhn16l.mongodb.net/?retryWrites=true&w=majority&appName=terasourcing"
 
 const connectToDatabase = async() =>  {
   try {
-    await mongoose.connect(URL, {
+    await mongoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
